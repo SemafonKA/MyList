@@ -157,10 +157,10 @@ public:
 	}
 
 	/* Возвращает размер списка */
-	unsigned int size() { return m_listSize; }
+	unsigned int size() const { return m_listSize; }
 
 	/* Возвращает, пустой ли список или нет */
-	bool isEmpty() { return m_listSize == 0; }
+	bool isEmpty() const { return m_listSize == 0; }
 
 	/* Добавляет новое звено в начало списка */
 	List& push_front(int date = 0) { return push(-1, date); }
@@ -169,10 +169,10 @@ public:
 	List& push_back(int date = 0) { return push(m_listSize - 1, date); }
 
 	/* Возвращает значение в последнем звене списка */
-	int back() { return pos_back(m_listSize - 1); }
+	int back() const { return pos_back(m_listSize - 1); }
 
 	/* Возвращает значение в первом звене списка */
-	int front() { return pos_back(0); }
+	int front() const { return pos_back(0); }
 
 	/* Удаляет последнее звено списка */
 	int pop_back() { return remove(m_listSize - 1); }
@@ -182,7 +182,7 @@ public:
 };
 
 int main() {
-	system("chcp 1251"); system("cls");
+	system("chcp 65001"); system("cls");
 
 	List list;
 	constexpr auto SIZE = 1'000;
@@ -198,7 +198,6 @@ int main() {
 	/*
 		Просто убиваем память проекта, ~3 ГБ памяти, причём дважды
 	*/
-
 	constexpr auto SIZE2 = 40'000'000;
 	constexpr auto SIZE3 = 2'000'000;
 	cout << "All: ";
@@ -214,7 +213,7 @@ int main() {
 	cout << endl;
 	list.clear();
 
-	cout << "All: ";
+	/*cout << "All: ";
 	for (int i = 0; i < SIZE2; i += SIZE3) {
 		cout << "[  ]";
 	}
@@ -225,9 +224,9 @@ int main() {
 		if (i % SIZE3 == 0) cout << " || ";
 	}
 	cout << endl;
-	list.clear();
+	list.clear();*/
 
-	if (list.isEmpty()) cout << "Лист пустой!";
+	if (list.isEmpty()) cout << "Лист пустой!!";
 	else cout << "Лист не пустой((";
 	cout << endl;
 
