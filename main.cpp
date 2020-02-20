@@ -182,7 +182,7 @@ public:
 };
 
 int main() {
-	system("chcp 65001"); system("cls");
+	system("chcp 1251"); system("cls");
 
 	List list;
 	constexpr auto SIZE = 1'000;
@@ -198,6 +198,7 @@ int main() {
 	/*
 		Просто убиваем память проекта, ~3 ГБ памяти, причём дважды
 	*/
+
 	constexpr auto SIZE2 = 40'000'000;
 	constexpr auto SIZE3 = 2'000'000;
 	cout << "All: ";
@@ -213,7 +214,7 @@ int main() {
 	cout << endl;
 	list.clear();
 
-	/*cout << "All: ";
+	cout << "All: ";
 	for (int i = 0; i < SIZE2; i += SIZE3) {
 		cout << "[  ]";
 	}
@@ -224,9 +225,9 @@ int main() {
 		if (i % SIZE3 == 0) cout << " || ";
 	}
 	cout << endl;
-	list.clear();*/
+	list.clear();
 
-	if (list.isEmpty()) cout << "Лист пустой!!";
+	if (list.isEmpty()) cout << "Лист пустой!";
 	else cout << "Лист не пустой((";
 	cout << endl;
 
